@@ -4,6 +4,20 @@
 ║                    WARMING/__INIT__.PY - v2026.∞                            ║
 ║                  Quantum Account Warming System Gateway                     ║
 ║                      "Trust is forged, not given"                           ║
+║                                                                              ║
+║    Modules:                                                                  ║
+║    ├── activity_simulator.py  → Gmail interaction & behavior simulation    ║
+║    ├── google_services.py     → YouTube/Drive/Maps/Search warming          ║
+║    └── reputation_builder.py  → Trust score optimization & email           ║
+║                                  deliverability engineering                 ║
+║                                                                              ║
+║    Planned:                                                                  ║
+║    ├── AndroidPlayStoreWarmup  → Play Store activity simulation            ║
+║    ├── GooglePhotosWarmup      → Photos upload & share patterns            ║
+║    ├── ChromeSyncSimulator     → Browser history/bookmark sync             ║
+║    ├── DKIMSignatureSimulator  → Email authentication simulation           ║
+║    ├── SPFRecordSimulator      → SPF policy compliance                     ║
+║    └── DMARCComplianceEngine   → DMARC alignment & reporting               ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 """
 
@@ -15,9 +29,8 @@ from .activity_simulator import (
     ScrollBehaviorEngine,
     ClickPatternGenerator,
     FormFillingSimulator,
-    ReadingTimeSimulator,
     BehavioralSignature,
-    ActivityLogger
+    ActivityLogger,
 )
 
 from .google_services import (
@@ -25,73 +38,32 @@ from .google_services import (
     GoogleDriveWarmupEngine,
     GoogleSearchSimulator,
     GoogleMapsWarmupEngine,
-    AndroidPlayStoreWarmup,
-    GooglePhotosWarmup,
-    CalendarEventGenerator,
-    GoogleDocsWarmup,
-    GoogleSheetsWarmup,
-    GoogleSlidesWarmup,
-    ChromeSyncSimulator,
-    MultiServiceOrchestrator
+    MultiServiceOrchestrator,
 )
 
 from .reputation_builder import (
-    TrustScoreOptimizer,
     ReputationBuilder,
-    SenderReputationEngine,
-    SpamFilterTrainer,
-    EmailEngagementSimulator,
-    ContactNetworkBuilder,
-    InboxPlacementOptimizer,
-    DomainReputationBuilder,
-    IPReputationWarmup,
-    DKIMSignatureSimulator,
-    SPFRecordSimulator,
-    DMARCComplianceEngine,
-    GooglePostmasterIntegrator
+    EmailActivitySimulator,
+    GoogleServicesSimulator,
+    HumanBehaviorSimulator,
+    GoogleTrustProfile,
+    TrustSignal,
+    TrustLevel,
 )
 
 __all__ = [
     # Activity Simulator
-    'GmailActivitySimulator',
-    'EmailThreadGenerator',
-    'HumanTypingSimulator',
-    'MouseMovementEngine',
-    'ScrollBehaviorEngine',
-    'ClickPatternGenerator',
-    'FormFillingSimulator',
-    'ReadingTimeSimulator',
-    'BehavioralSignature',
-    'ActivityLogger',
+    'GmailActivitySimulator', 'EmailThreadGenerator', 'HumanTypingSimulator',
+    'MouseMovementEngine', 'ScrollBehaviorEngine', 'ClickPatternGenerator',
+    'FormFillingSimulator', 'BehavioralSignature', 'ActivityLogger',
     
     # Google Services
-    'YouTubeWarmupEngine',
-    'GoogleDriveWarmupEngine',
-    'GoogleSearchSimulator',
-    'GoogleMapsWarmupEngine',
-    'AndroidPlayStoreWarmup',
-    'GooglePhotosWarmup',
-    'CalendarEventGenerator',
-    'GoogleDocsWarmup',
-    'GoogleSheetsWarmup',
-    'GoogleSlidesWarmup',
-    'ChromeSyncSimulator',
-    'MultiServiceOrchestrator',
+    'YouTubeWarmupEngine', 'GoogleDriveWarmupEngine', 'GoogleSearchSimulator',
+    'GoogleMapsWarmupEngine', 'MultiServiceOrchestrator',
     
     # Reputation Builder
-    'TrustScoreOptimizer',
-    'ReputationBuilder',
-    'SenderReputationEngine',
-    'SpamFilterTrainer',
-    'EmailEngagementSimulator',
-    'ContactNetworkBuilder',
-    'InboxPlacementOptimizer',
-    'DomainReputationBuilder',
-    'IPReputationWarmup',
-    'DKIMSignatureSimulator',
-    'SPFRecordSimulator',
-    'DMARCComplianceEngine',
-    'GooglePostmasterIntegrator'
+    'ReputationBuilder', 'EmailActivitySimulator', 'GoogleServicesSimulator',
+    'HumanBehaviorSimulator', 'GoogleTrustProfile', 'TrustSignal', 'TrustLevel',
 ]
 
 __version__ = '2026.∞.1'

@@ -15,7 +15,7 @@ from typing import Dict, List, Optional, Any
 from datetime import datetime
 import re
 
-from persona_generator import HumanPersona, Interest, Personality, EmploymentStatus
+from .persona_generator import HumanPersona, Interest, Personality, EmploymentStatus
 
 
 class BioGenerator:
@@ -748,7 +748,7 @@ def main():
             personas_data = json.load(f)
         
         # Convert dict to HumanPersona (simplified - in production use proper deserialization)
-        from persona_generator import HumanPersona
+        from .persona_generator import HumanPersona
         personas = []
         for data in personas_data[:5]:  # Generate bios for first 5
             # This is simplified; real implementation would fully reconstruct
@@ -760,7 +760,7 @@ def main():
         
     except FileNotFoundError:
         print("⚠️  Persona file not found. Generating sample persona...")
-        from persona_generator import PersonaGenerator
+        from .persona_generator import PersonaGenerator
         forge = PersonaGenerator()
         personas = forge.generate_batch(5)
     
