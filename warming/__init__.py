@@ -6,18 +6,11 @@
 ║                      "Trust is forged, not given"                           ║
 ║                                                                              ║
 ║    Modules:                                                                  ║
-║    ├── activity_simulator.py  → Gmail interaction & behavior simulation    ║
-║    ├── google_services.py     → YouTube/Drive/Maps/Search warming          ║
-║    └── reputation_builder.py  → Trust score optimization & email           ║
-║                                  deliverability engineering                 ║
-║                                                                              ║
-║    Planned:                                                                  ║
-║    ├── AndroidPlayStoreWarmup  → Play Store activity simulation            ║
-║    ├── GooglePhotosWarmup      → Photos upload & share patterns            ║
-║    ├── ChromeSyncSimulator     → Browser history/bookmark sync             ║
-║    ├── DKIMSignatureSimulator  → Email authentication simulation           ║
-║    ├── SPFRecordSimulator      → SPF policy compliance                     ║
-║    └── DMARCComplianceEngine   → DMARC alignment & reporting               ║
+║    ├── activity_simulator.py       → Gmail interaction & behavior sim       ║
+║    ├── google_services.py          → YouTube/Drive/Maps/Search warming      ║
+║    ├── reputation_builder.py       → Trust score & email deliverability     ║
+║    ├── email_deliverability.py     → DKIM/SPF/DMARC/Spam/Reputation eng.   ║
+║    └── google_service_warmups.py   → PlayStore/Photos/Calendar/Docs/etc    ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 """
 
@@ -51,6 +44,36 @@ from .reputation_builder import (
     TrustLevel,
 )
 
+from .email_deliverability import (
+    DKIMSignatureSimulator,
+    SPFRecordSimulator,
+    DMARCComplianceEngine,
+    SPFResult,
+    DMARCPolicy,
+    DMARCResult,
+    SpamAnalysis,
+    SenderReputationEngine,
+    TrustScoreOptimizer,
+    IPReputationWarmup,
+    DomainReputationBuilder,
+    SpamFilterTrainer,
+    InboxPlacementOptimizer,
+    EmailEngagementSimulator,
+    ContactNetworkBuilder,
+    GooglePostmasterIntegrator,
+)
+
+from .google_service_warmups import (
+    BaseWarmup,
+    AndroidPlayStoreWarmup,
+    GooglePhotosWarmup,
+    CalendarEventGenerator,
+    GoogleDocsWarmup,
+    GoogleSheetsWarmup,
+    GoogleSlidesWarmup,
+    ChromeSyncSimulator,
+)
+
 __all__ = [
     # Activity Simulator
     'GmailActivitySimulator', 'EmailThreadGenerator', 'HumanTypingSimulator',
@@ -64,6 +87,18 @@ __all__ = [
     # Reputation Builder
     'ReputationBuilder', 'EmailActivitySimulator', 'GoogleServicesSimulator',
     'HumanBehaviorSimulator', 'GoogleTrustProfile', 'TrustSignal', 'TrustLevel',
+    
+    # Email Deliverability Suite
+    'DKIMSignatureSimulator', 'SPFRecordSimulator', 'DMARCComplianceEngine',
+    'SPFResult', 'DMARCPolicy', 'DMARCResult', 'SpamAnalysis',
+    'SenderReputationEngine', 'TrustScoreOptimizer', 'IPReputationWarmup',
+    'DomainReputationBuilder', 'SpamFilterTrainer', 'InboxPlacementOptimizer',
+    'EmailEngagementSimulator', 'ContactNetworkBuilder', 'GooglePostmasterIntegrator',
+    
+    # Google Service Warmups
+    'BaseWarmup', 'AndroidPlayStoreWarmup', 'GooglePhotosWarmup',
+    'CalendarEventGenerator', 'GoogleDocsWarmup', 'GoogleSheetsWarmup',
+    'GoogleSlidesWarmup', 'ChromeSyncSimulator',
 ]
 
 __version__ = '2026.∞.1'

@@ -100,6 +100,27 @@ from .detection_evasion import (
     MemoryTimingProtector,    # performance.now() & Date.now() jitter
 )
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# STEALTH PROTECTORS — Standalone modular anti-detection classes
+# Each implements .apply(page, fingerprint) — composable via FingerprintInjector
+# ═══════════════════════════════════════════════════════════════════════════════
+from .stealth_protectors import (
+    FingerprintInjector,      # Master orchestrator — chains all protectors
+    WebGLProtector,           # WebGL vendor/renderer spoofing
+    CanvasProtector,          # Canvas toDataURL noise injection
+    WebRTCBlocker,            # RTCPeerConnection IP leak prevention
+    TimezoneSpoofer,          # Intl.DateTimeFormat + getTimezoneOffset
+    GeolocationSpoofer,       # navigator.geolocation override
+    FontProtector,            # document.fonts + measureText noise
+    AudioProtector,           # AudioContext fingerprint noise
+    ScreenPropertySpoofer,    # window.screen + devicePixelRatio
+    HardwareSpoofer,          # hardwareConcurrency, deviceMemory
+    NavigatorProtector,       # webdriver, plugins, mimeTypes, languages
+    CDPDetectionRemover,      # Chrome DevTools Protocol markers
+    BatterySpoofer,           # navigator.getBattery
+    PermissionSpoofer,        # navigator.permissions.query
+)
+
 __all__ = [
     # Stealth Browser
     'StealthBrowser', 'StealthBrowserFactory', 'StealthConfig',
@@ -123,4 +144,10 @@ __all__ = [
     'DetectionEvasionEngine', 'GoogleBotDetector', 'MLAnomalyPreventer',
     'WebDriverDetector', 'AutomationFlagRemover', 'PermissionSimulator',
     'NavigatorManipulator', 'ChromeRuntimeInjector', 'MemoryTimingProtector',
+
+    # Stealth Protectors (standalone modular classes)
+    'FingerprintInjector', 'WebGLProtector', 'CanvasProtector', 'WebRTCBlocker',
+    'TimezoneSpoofer', 'GeolocationSpoofer', 'FontProtector', 'AudioProtector',
+    'ScreenPropertySpoofer', 'HardwareSpoofer', 'NavigatorProtector',
+    'CDPDetectionRemover', 'BatterySpoofer', 'PermissionSpoofer',
 ]

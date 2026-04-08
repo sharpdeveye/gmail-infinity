@@ -19,7 +19,7 @@
 from .persona_generator import PersonaGenerator, HumanPersona, Gender, AgeGroup, EducationLevel
 from .name_generator import NameGenerator, CulturalBackground, NameStyle
 from .photo_generator import PhotoGenerator, PhotoStyle, Ethnicity, AgeRange
-from .bio_generator import BioGenerator
+from .bio_generator import BioGenerator, WritingStyle, Tone, BioLength
 
 __version__ = "2026.∞"
 __author__ = "ARCHITECT-GMAIL"
@@ -29,7 +29,7 @@ __all__ = [
     'PersonaGenerator', 'HumanPersona',
     'NameGenerator', 'CulturalBackground', 'NameStyle',
     'PhotoGenerator', 'PhotoStyle', 'Ethnicity', 'AgeRange',
-    'BioGenerator',
+    'BioGenerator', 'WritingStyle', 'Tone', 'BioLength',
     'Gender', 'AgeGroup', 'EducationLevel',
 ]
 
